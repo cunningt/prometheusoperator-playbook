@@ -292,6 +292,19 @@
         name: prometheus
         namespace: "{{ namespace }}"
 
+- name: '[PROMETHEUS] Set to Prometheus Route'
+  k8s:
+    api_version: v1
+    kind: Route
+    definition:
+      metadata:
+        name: prometheus
+        namespace: "{{ namespace }}"
+    spec:
+      to:
+        kind: Service
+        name: prometheus
+
 - name: '[PROMETHEUS] Set to Prometheus RoleBinding'
   k8s:
     kind: Service

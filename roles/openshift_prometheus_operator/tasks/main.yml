@@ -8,14 +8,4 @@
   - name: "[PROMETHEUS APB][MAIN] Deploying Prometheus"
     include_tasks: prometheus.yml
  
-- block:
-  - name: "[PROMETHEUS APB][MAIN] Test Prometheus deployment"
-    include_tasks: test.yml
-  when: mode == 'test'
-
-  # Recover Tests Results
-- block:
-  - name: "[PROMETHEUS APB][FINISH] Recover Tests Results"
-    include_tasks: recover_tests.yml
-  when: mode == 'finish_tests'
 
