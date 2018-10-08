@@ -3,9 +3,11 @@
   debug:
     msg: 
       - "Entering on Main:"
-
-- block:
-  - name: "[PROMETHEUS APB][MAIN] Deploying Prometheus"
-    include_tasks: prometheus.yml
  
+- block:
+  - name: "[PROMETHEUS OPERATOR][MAIN] Deploying Grafana"
+    include_tasks: grafana.yml
 
+#- block:
+#  - name: "[PROMETHEUS OPERATOR][MAIN] Deploying Prometheus"
+#    include_tasks: prometheus.yml
